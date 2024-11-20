@@ -1,0 +1,39 @@
+#titulo{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    background: linear-gradient(#e66465, #9198e5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  #carrito1{
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    padding: 16px;
+  }
+  
+    
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+  
+  .moto {
+    font-size: xx-large;
+    text-align: center; 
+  }
+  
+  
+  .texto {
+    text-align: center; 
+  }
+  
+  .boton {
+    text-align: center;
+    width: 500px;
+    height: 500px;
+  }

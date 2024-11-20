@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="goToMainPage()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title id="titulo">Pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">pedido</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+  <!-- Formulario para ingresar direcciones -->
+  <ion-item>
+    <ion-label position="floating">Dirección de origen</ion-label>
+    <ion-input [(ngModel)]="direccionOrigen"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Dirección de destino</ion-label>
+    <ion-input [(ngModel)]="direccionDestino"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="calcularRuta()">Calcular Ruta</ion-button>
+
+  <!-- Contenedor para el mapa -->
+  <div id="mapId" style="height: 400px; margin-top:100px; width:100%;"></div>
+
+</ion-content>

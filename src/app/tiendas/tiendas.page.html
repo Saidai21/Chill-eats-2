@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title id="titulo">Chill-Eats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tiendas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+    <ion-card routerLink="/pizza">
+      <img alt="Silhouette of mountains" src="https://www.hola.com/horizon/landscape/e9e1e82cb873-pepperoni-pizza-abob-t.jpg" />
+      <ion-card-header>
+        <ion-card-title>Mario Pizza</ion-card-title>
+        <ion-card-subtitle><ion-icon name="star-half-outline"></ion-icon> 4.5</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <b>La pizza que te hará decir: ¡Mamma mia!</b>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card routerLink="/comida-china">
+      <img alt="Silhouette of mountains" src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/11/27/comida-china.jpeg" />
+      <ion-card-header>
+        <ion-card-title>China Cocina</ion-card-title>
+        <ion-card-subtitle><ion-icon name="star-half-outline"></ion-icon> 4.5</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <b>Donde las hamburguesas siempre tienen el toque especial.</b>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card routerLink="/hamburguesa">
+      <img alt="Silhouette of mountains" src="https://fondosmil.co/fondo/75570.jpg" />
+      <ion-card-header>
+        <ion-card-title>Bayron Burger</ion-card-title>
+        <ion-card-subtitle><ion-icon name="star-half-outline"></ion-icon> 4.5</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <b>La auténtica experiencia china, hecha con pasión.</b>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="['/home']" >
+          <ion-icon name="home-outline"></ion-icon>
+          Inicio
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/tiendas']" [disabled]="true" >
+          <ion-icon name="bag-outline" ></ion-icon>
+          Tiendas
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/cupones']" >
+          <ion-icon name="ticket-outline" ></ion-icon>
+          Cupones 
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/perfil']">
+          <ion-icon name="person-outline"></ion-icon>
+          Perfil
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

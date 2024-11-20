@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="goToMainPage()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title id="titulo">Pizza</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">pizza</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Comida Italiana</ion-card-title>
+      <ion-card-subtitle>Precios en Chile</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let pizza of pizzas | async">
+          <ion-thumbnail slot="end" class="thumbnail-large">
+            <img [src]="pizza.imagen" alt="{{ pizza.nombre }}" />
+            <ion-button fill="clear" class="add-button" shape="round" size="small" (click)="agregarProducto(pizza)">+</ion-button>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ pizza.nombre }}</h2>
+            <ion-card-subtitle>${{ pizza.valor }} CLP</ion-card-subtitle>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón para pagar carrito -->
+  <ion-button id="pay-button" expand="block" [routerLink]="['/carrito']">Pagar Carrito</ion-button>
+</ion-content>

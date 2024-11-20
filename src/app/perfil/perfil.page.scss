@@ -1,0 +1,100 @@
+#titulo{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    background: linear-gradient(#e66465, #9198e5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  ion-header {
+    --background: #222;
+    --color: #fff;
+  }
+  
+  ion-card {
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-card-header {
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  ion-card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  ion-card-content {
+    padding: 16px;
+  }
+  
+  .profile-img-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    align-items: center;
+  
+    ion-img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+  }
+  
+  ion-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    margin-bottom: 12px;
+  }
+  
+  ion-label {
+    color: #666;
+    font-weight: bold;
+  }
+  
+  ion-text {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  ion-footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+  }
+  
+  ion-toolbar {
+    background-color: #333;
+  }
+  
+  ion-tab-bar {
+    --background: #f8f8f8;
+  }
+  
+  ion-tab-button {
+    color: #333;
+    font-size: 0.875rem;
+  }
+  
+  ion-tab-button[disabled] {
+    color: #aaa;
+  }
+  
+  ion-icon {
+    font-size: 1.25rem;
+  }
+  
+  #logout-btn{
+    padding: 16px;
+    display: flex;
+    float: right;
+  }
+    

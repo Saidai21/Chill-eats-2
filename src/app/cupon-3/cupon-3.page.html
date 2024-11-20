@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title id="titulo">Chill-Eats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">cupon-3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <img src="https://genovesapizza.cl/wp-content/uploads/2018/10/GRAND_BE.jpg" alt="">
+  <div id="container">
+    <h1>Pizza tradicional con bebida</h1>
+    <p>Solo en locales</p>
+    <h1><b>$7.800</b></h1>
+  </div>
+
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <input type="text" style="display: none;" [(ngModel)]="texto">
+      <qrcode [qrdata]="text" [width]="300" class="text-center"></qrcode> 
+      <p class="text-center" id="codigo"> {{numeroAleatorio}} </p>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+<ion-footer>
+  <ion-button size="large" expand="block" id="open-modal" >CANJEAR</ion-button>
+</ion-footer>

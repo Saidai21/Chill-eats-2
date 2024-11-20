@@ -1,0 +1,35 @@
+<ion-header [translucent]="true" #page>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title id="titulo">Chill-Eats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">cupon-2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <img src="https://img.freepik.com/fotos-premium/etiqueta-ofertas-descuento-25-ciento-diseno-estilo-relieve-rosa_2239-21113.jpg" alt="" >
+  <div id="container">
+    <h1>25% de descuento</h1>
+    <p>25% de descuento en compras de más de $10.000</p>
+  </div>
+
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <input type="text" style="display: none;" [(ngModel)]="texto">
+      <qrcode [qrdata]="text" [width]="300" class="text-center"></qrcode> 
+      <p class="text-center" id="codigo"> {{numeroAleatorio}} </p>
+    </ng-template>
+  </ion-modal>
+  
+</ion-content>
+<ion-footer>
+  <ion-button size="large" expand="block" id="open-modal" >CANJEAR</ion-button>
+</ion-footer>
+
+

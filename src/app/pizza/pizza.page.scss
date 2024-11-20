@@ -1,0 +1,42 @@
+
+.thumbnail-large {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    img {
+        border-radius: 15%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+}
+  
+  .add-button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    z-index: 10;
+    background-color: rgb(255, 255, 255, 0.75);
+    color: black;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #pay-button {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+  }
+
+  #titulo{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    background: linear-gradient(#e66465, #9198e5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

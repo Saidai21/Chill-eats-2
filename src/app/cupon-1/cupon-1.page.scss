@@ -1,0 +1,43 @@
+#container{
+    margin:30px;
+}
+#btn{
+    margin:0px 10px 0px 10px;
+    --border-radius: 100px;
+}
+
+ion-footer{
+    margin-bottom: auto;
+}
+
+#titulo{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    background: linear-gradient(#e66465, #9198e5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.block {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-modal {
+    --height: auto;
+}
+
+#codigo{
+    font-size: xx-large;
+    background-color: gray;
+    border-radius: 5px;
+    margin: 0 100px 20px 100px;
+}

@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title id="titulo">
+      Chill-Eats 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" #page>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-list>
+      <ion-item>
+        <ion-select placeholder="Selecciona una dirección">
+          <ion-select-option *ngFor="let direccion of direcciones" [value]="direccion.id">
+            {{ direccion.label }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button id="open-modal" style="margin-left:auto; display:block;" color="secondary">Agregar Direccion</ion-button>
+    </ion-list>  
+    
+    <!-- MODAL     --> 
+    <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="page" (didPresent)="iniciarMapa()">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Ingresa una direccion</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="modal.dismiss()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-input placeholder="Ingresa una dirección" [(ngModel)]="direccionIngresada" style="margin-bottom: 10px;"></ion-input>
+          <ion-button (click)="buscarDireccion()" >Buscar</ion-button>
+          <ion-button (click)="agregarDireccion()" >Agregar Direccion</ion-button>
+          <div id="mapa"></div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+    <!-- MODAL     -->
+    
+    <!-- IMAGENES -->
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="6" size-sm="12" size-lg="6" size-xs="12">
+          <div>
+            <img src="https://www.hola.com/horizon/landscape/e9e1e82cb873-pepperoni-pizza-abob-t.jpg" alt="pizza" style="border-radius: 4%;" routerLink="/pizza">
+          </div>
+        </ion-col>
+        <ion-col size="6" size-md="6" size-sm="12" size-xs="12">
+          <div>
+            <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/11/27/comida-china.jpeg" alt="china" style="border-radius: 4%;" routerLink="/comida-china"> 
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6" size-md="6" size-sm="12" size-xs="12" >
+          <div>
+            <img src="https://fondosmil.co/fondo/75570.jpg" alt="Hamburguesas" style="border-radius: 4%;" routerLink="/hamburguesa">
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- IMAGENES -->
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>   
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="['/home']" [disabled]="true">
+          <ion-icon name="home-outline"></ion-icon>
+          Inicio
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/tiendas']"  >
+          <ion-icon name="bag-outline" ></ion-icon>
+          Tiendas
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['../cupones']" >
+          <ion-icon name="ticket-outline" ></ion-icon>
+          Cupones 
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/perfil']">
+          <ion-icon name="person-outline"></ion-icon>
+          Perfil
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

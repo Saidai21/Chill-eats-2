@@ -1,0 +1,24 @@
+#titulo{
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: xx-large;
+  background: linear-gradient(#e66465, #9198e5);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+ion-content{
+  border-bottom: none;
+  border-top:none;
+}
+
+#container{
+  margin: 30px;
+}
+
+#mapa {
+  width: 100%; /* Toma todo el ancho del contenedor */
+  height: 400px; /* Ajusta la altura según tus necesidades */
+  border: 1px solid #ccc; /* Opcional, para visualizar los límites */
+  margin-top: 10px;
+}

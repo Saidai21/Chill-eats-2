@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title id="titulo">Chill-Eats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Cupones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="6" size-sm="6" size-lg="6">
+          <ion-card routerLink="/cupon-1">
+            <img alt="Descuento" src="https://img.freepik.com/fotos-premium/etiqueta-ofertas-descuento-25-ciento-diseno-estilo-relieve-rosa_2239-21113.jpg" class="cupon-image"/>
+            <ion-card-header>
+              <ion-card-title>-25%</ion-card-title>
+              <ion-card-subtitle>En la aplicación</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <h1>-------</h1>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6" size-md="6" size-sm="6" size-lg="6">
+          <ion-card routerLink="/cupon-2">
+            <img alt="Hamburguesas" src="https://images.aws.nestle.recipes/resized/8689e8d974203563ddcc9bbff91323c2_MG_CHORIZOBURGER_Main-880x660_1080_850.png" class="cupon-image" />
+            <ion-card-header>
+              <ion-card-title>Hamburguesa</ion-card-title>
+              <ion-card-subtitle>Solo locales</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <h1>$6.800</h1>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" size-md="6" size-sm="6" size-lg="6">
+          <ion-card routerLink="/cupon-3">
+            <img alt="Pizza" src="https://genovesapizza.cl/wp-content/uploads/2018/10/GRAND_BE.jpg" class="cupon-image" />
+            <ion-card-header>
+              <ion-card-title>Combo Pizza</ion-card-title>
+              <ion-card-subtitle>Solo locales</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <h1>$7.800</h1>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6" size-md="6" size-sm="6" size-lg="6">
+          <ion-card routerLink="/cupon-4">
+            <img alt="Aollao" src="https://tofuu.getjusto.com/orioneat-prod/Xf92ZxceLupWmfs2Q-Arrollado%20Primavera.jpg" class="cupon-image" />
+            <ion-card-header>
+              <ion-card-title>5 Arrollados</ion-card-title>
+              <ion-card-subtitle>Solo locales</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <h1>$5.800</h1>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="['/home']" >
+          <ion-icon name="home-outline"></ion-icon>
+          Inicio
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/tiendas']"  >
+          <ion-icon name="bag-outline" ></ion-icon>
+          Tiendas
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/cupones']" [disabled]="true" >
+          <ion-icon name="ticket-outline" ></ion-icon>
+          Cupones 
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/perfil']">
+          <ion-icon name="person-outline"></ion-icon>
+          Perfil
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

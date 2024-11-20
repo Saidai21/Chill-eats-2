@@ -1,0 +1,51 @@
+/* home.page.scss */
+#container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .auth-card {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 16px;
+  }
+  
+  ion-input {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  
+  ion-button {
+    margin-bottom: 16px;
+  }
+  
+  p {
+    font-size: 14px;
+  }
+  
+  a {
+    color: var(--ion-color-primary);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  #titulo{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    background: linear-gradient(#e66465, #9198e5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ion-ca {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}

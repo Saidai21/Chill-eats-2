@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title id="titulo">Chill-Eats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card class="auth-card ion-ca" *ngIf="segment === 'login'" >
+      <ion-card-header>
+        <ion-card-title>Iniciar Sesión</ion-card-title>
+      </ion-card-header>
+      <ion-card-content >
+        <ion-input placeholder="Correo Electrónico" type="email" [(ngModel)]="email"></ion-input>
+        <ion-input type="password" placeholder="Contraseña" [(ngModel)]="password"></ion-input>
+        <ion-button expand="full" (click)="login()">Iniciar Sesión</ion-button>
+        <p>¿No tienes cuenta? <a href="javascript:void(0)" (click)="switchToRegister($event)">Regístrate</a></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="auth-card" *ngIf="segment === 'register'">
+      <ion-card-header>
+        <ion-card-title>Registro</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input placeholder="Nombre" type="text" [(ngModel)]="registerName"></ion-input>
+        <ion-input placeholder="Correo Electrónico" type="email" [(ngModel)]="registerEmail"></ion-input>
+        <ion-input type="password" placeholder="Contraseña" [(ngModel)]="registerPassword"></ion-input>
+        <ion-input type="password" placeholder="Repetir Contraseña" [(ngModel)]="registerConfirmPassword"></ion-input>
+        <ion-button expand="full" (click)="register()">Registrarse</ion-button>
+        <p>¿Ya tienes cuenta? <a href="javascript:void(0)" (click)="switchToLogin($event)">Inicia sesión</a></p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer>
+</ion-footer>

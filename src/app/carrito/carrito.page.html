@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title id="titulo">
+      Chill-Eats
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div class="center-container">
+    <ion-card id="carrito1">
+      <ion-card-header>
+        <ion-card-title>Carrito</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item *ngFor="let carrito of comida">
+          <ion-thumbnail slot="start">
+            <img alt="Imagen de producto" src={{carrito.imagen}} />
+          </ion-thumbnail>
+          <ion-label>{{ carrito.nombre }} - ${{ carrito.valor}}</ion-label>
+        </ion-item>
+      </ion-card-content>
+      <ion-button (click)="presentAlert()" (click)="ejecutar()" routerLink="/pedido" >Comprar Ya</ion-button>
+    </ion-card>
+  </div>
+
+  <br><br><br><br>
+
+  <div class="moto">
+    <ion-icon name="bicycle-outline"></ion-icon>
+  </div>
+
+  <div class="texto">
+    <p> Tu pedido llegará en unos momentos...</p>
+    
+  </div>
+
+
+</ion-content>
