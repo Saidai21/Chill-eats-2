@@ -50,4 +50,28 @@ export class CarritoService {
       throw new Error('Usuario no autenticado');
     }
   }
+
+  async eliminarCarrito() {
+    const user = await this.afAuth.currentUser;
+  
+    if (user) {
+      const carritoRef = this.firestore.collection('users').doc(user.uid).collection('carrito');
+  
+      
+      const carritoSnapshot = await carritoRef.get().toPromise();
+  
+      
+      const batch = this.firestore.firestore.batch();
+      carritoSnapshot?.forEach(doc => {
+        batch.delete(doc.ref);
+      });
+  
+      
+      await batch.commit();
+    } else {
+      throw new Error('Usuario no autenticado');
+    }
+  }
+
+
 }

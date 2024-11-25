@@ -61,4 +61,8 @@ export class CarritoPage implements OnInit {
   ejecutar() {
     this.animation.play();
   }
+
+  async eliminarCarrito(){
+    await this.carritoService.eliminarCarrito();
+  }
 }
