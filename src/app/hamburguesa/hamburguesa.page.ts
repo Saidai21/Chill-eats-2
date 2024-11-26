@@ -10,29 +10,60 @@ import { Observable } from 'rxjs';
   styleUrls: ['hamburguesa.page.scss'],
 })
 export class HamburguesaPage implements OnInit {
-  hamburguesas!: Observable<any[]>;
+  hamburguesas!: Observable<any[]>; // Lista de hamburguesas
+  tieneProductosEnCarrito: boolean = false; // Controla la visibilidad del botón "Pagar Carrito"
 
-  constructor(private router: Router, private comidaService: ComidaService, private carritoService: CarritoService) {}
+  constructor(
+    private router: Router,
+    private comidaService: ComidaService,
+    private carritoService: CarritoService
+  ) {}
 
   ngOnInit() {
-    this.cargarHamburguesas();
+    this.cargarHamburguesas(); // Cargar las hamburguesas disponibles
+    this.monitorearCarrito(); // Monitorear el carrito en tiempo real
   }
 
   cargarHamburguesas() {
-    // Se obtiene la lista de hamburguesas desde el servicio de comida
-    this.hamburguesas = this.comidaService.obtenerHamburguesas(); // Si es necesario, filtra las hamburguesas en el backend o aquí.
-    this.hamburguesas.subscribe(data => {
-      console.log('Datos de hamburguesas recibidos:', data);
-    }, error => {
-      console.error('Error al cargar hamburguesas:', error);
-    });
+    this.hamburguesas = this.comidaService.obtenerHamburguesas();
+    this.hamburguesas.subscribe(
+      (data) => {
+        console.log('Datos de hamburguesas recibidos:', data);
+      },
+      (error) => {
+        console.error('Error al cargar hamburguesas:', error);
+      }
+    );
   }
 
   async agregarProducto(producto: { id: string; nombre: string; precio: number }) {
-    await this.carritoService.agregarProducto(producto);
+    const productoConRestaurante = {
+      ...producto,
+      ['restaurantes']: 'Hamburguesa', // Especificar el restaurante
+    };
+
+    try {
+      await this.carritoService.agregarProducto(productoConRestaurante);
+    } catch (error) {
+      console.error(error);
+      alert('Error: Solo puedes agregar productos del mismo restaurante al carrito.');
+    }
+  }
+
+  monitorearCarrito() {
+    this.carritoService.cargarCarrito().subscribe(
+      (productosEnCarrito) => {
+        // Verificar si hay productos en el carrito
+        this.tieneProductosEnCarrito = productosEnCarrito.length > 0;
+      },
+      (error) => {
+        console.error('Error al monitorear el carrito:', error);
+        this.tieneProductosEnCarrito = false;
+      }
+    );
   }
 
   goToMainPage() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home']); // Navegar a la página principal
   }
 }

@@ -38,6 +38,7 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Botón para pagar carrito -->
-  <ion-button id="pay-button" expand="block" [routerLink]="['/carrito']">Pagar Carrito</ion-button>
+  <ion-button *ngIf="tieneProductosEnCarrito" id="pay-button" color="dark" expand="block" [routerLink]="['/carrito']">
+    Pagar Carrito
+  </ion-button>
 </ion-content>
