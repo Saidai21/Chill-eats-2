@@ -34,7 +34,7 @@
           <ion-label><strong>Total:</strong> ${{ total }}</ion-label>
         </ion-item>
       </ion-card-content>
-      <ion-button color="danger" (click)="eliminarCarrito()">Eliminar Carrito</ion-button>
+      <ion-button color="danger" (click)="eliminarCarrito()" routerLink="/home">Eliminar Carrito</ion-button>
       <ion-button (click)="presentAlert()" (click)="ejecutar()" routerLink="/pedido" >Comprar Ya</ion-button>
     </ion-card>
   </div>

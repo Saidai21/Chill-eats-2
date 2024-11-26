@@ -24,7 +24,6 @@
 
     <ion-card-content>
       <ion-list>
-        <!-- Hamburguesa 1 -->
         <ion-item *ngFor="let producto of hamburguesas | async">
           <ion-thumbnail slot="end" class="thumbnail-large">
             <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
@@ -39,6 +38,8 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Botón para pagar carrito -->
-  <ion-button id="pay-button" expand="block" [routerLink]="['/carrito']">Pagar Carrito</ion-button>
+  <!-- Botón para pagar carrito (dinámico y negro) -->
+  <ion-button *ngIf="tieneProductosEnCarrito" id="pay-button" color="dark" expand="block" [routerLink]="['/carrito']">
+    Pagar Carrito
+  </ion-button>
 </ion-content>

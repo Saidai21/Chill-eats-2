@@ -1,17 +1,10 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="dark">
-    <ion-buttons slot="start">
-      <ion-button (click)="goToMainPage()">
-        <ion-icon name="home"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title id="titulo">Comida China</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
+      <!-- Botón de retroceso -->
+      <ion-buttons slot="start">
+        <ion-back-button default-href="/home"></ion-back-button>
+      </ion-buttons>
       <ion-title size="large">comida-china</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -39,5 +32,7 @@
   </ion-card>
 
   <!-- Botón para pagar carrito -->
-  <ion-button id="pay-button" expand="block" [routerLink]="['/carrito']">Pagar Carrito</ion-button>
+  <ion-button *ngIf="tieneProductosEnCarrito" id="pay-button" expand="block" [routerLink]="['/carrito']">
+    Pagar Carrito
+  </ion-button>
 </ion-content>
