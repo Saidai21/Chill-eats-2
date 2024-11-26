@@ -64,6 +64,6 @@ export class ComidaChinaPage implements OnInit {
   }
 
   goToMainPage() {
-    this.router.navigate(['/home']); // Navegar a la página principal
+    this.router.navigate(['/home']); // Navegar a la página principa
   }
 }
