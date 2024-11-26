@@ -9,7 +9,8 @@ import { CarritoService } from '../services/carrito.service';
 })
 export class CarritoPage implements OnInit {
   private animation!: Animation;
-  comida: any[] = []; // Almacena los datos del carrito
+  comida: any[] = []; // Almacena los datos del carrito agrupados
+  total: number = 0; // Almacena el total del carrito
 
   constructor(
     private alertController: AlertController,
@@ -20,11 +21,26 @@ export class CarritoPage implements OnInit {
   ngOnInit() {
     this.carritoService.cargarCarrito().subscribe({
       next: (carrito) => {
-        this.comida = carrito; // Asigna los datos recibidos
+        // Agrupar los elementos por nombre
+        const agrupado = carrito.reduce((acc: any, item: any) => {
+          const existing = acc.find((prod: any) => prod.nombre === item.nombre);
+          if (existing) {
+            existing.cantidad += 1;
+            existing.valorTotal += item.valor;
+          } else {
+            acc.push({ ...item, cantidad: 1, valorTotal: item.valor });
+          }
+          return acc;
+        }, []);
+        
+        // Actualizar el carrito y calcular el total
+        this.comida = agrupado;
+        this.total = agrupado.reduce((sum: number, item: any) => sum + item.valorTotal, 0);
       },
       error: (error) => {
         console.error('Error al cargar el carrito:', error);
-        this.comida = []; // Asegúrate de dejar vacío en caso de error
+        this.comida = [];
+        this.total = 0;
       },
     });
   }
@@ -64,5 +80,7 @@ export class CarritoPage implements OnInit {
 
   async eliminarCarrito(){
     await this.carritoService.eliminarCarrito();
+    this.comida = [];
+    this.total = 0;
   }
 }
